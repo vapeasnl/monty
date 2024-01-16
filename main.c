@@ -1,5 +1,4 @@
 #include "monty.h"
-bus_t bus = {NULL, NULL, NULL, 0};
 /**
 * main - monty code interpreter
 * @argc: number of arguments
@@ -9,6 +8,7 @@ bus_t bus = {NULL, NULL, NULL, 0};
 int main(int argc, char *argv[])
 {
 	char *content;
+	bus_t bus = {NULL, NULL, NULL, 0};
 	FILE *file;
 	size_t size = 0;
 	ssize_t read_line = 1;
