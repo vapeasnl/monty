@@ -28,7 +28,7 @@ typedef void (*op_func)(stack_t **, unsigned int);
 
 /* File operations */
 void _openf(char *file_name);
-int _parsel(char *buffer, int line_number, int format);
+int _parsel(char *tmpb, int line_number, int fmt);
 void _readf(FILE *);
 int _charlenght(FILE *);
 void _sfunc(char *, char *, int, int);

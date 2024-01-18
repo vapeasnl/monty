@@ -14,7 +14,7 @@ int main(int argc, char *argv[])
 		fprintf(stderr, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);
 	}
-	ofile(argv[1]);
+	_openf(argv[1]);
 	_freeN();
 	return (0);
 }
