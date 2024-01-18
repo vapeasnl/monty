@@ -1,4 +1,4 @@
-#include "main.h"
+#include "monty.h"
 stack_t *head = NULL;
 /**
  * main - entry point
@@ -14,23 +14,23 @@ int main(int argc, char *argv[])
 		fprintf(stderr, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);
 	}
-	_openf(argv[1]);
-	_freeN();
+	open_file(argv[1]);
+	free_nodes();
 	return (0);
 }
 
 /**
- * _makeN - Creates a node.
+ * create_node - Creates a node.
  * @n: Number to go inside the node.
  * Return: Upon sucess a pointer to the node. Otherwise NULL.
  */
-stack_t *_makeN(int n)
+stack_t *create_node(int n)
 {
 	stack_t *node;
 
 	node = malloc(sizeof(stack_t));
 	if (node == NULL)
-		_er(4);
+		err(4);
 	node->next = NULL;
 	node->prev = NULL;
 	node->n = n;
@@ -38,9 +38,9 @@ stack_t *_makeN(int n)
 }
 
 /**
- * _freeN - Frees nodes in the stack.
+ * free_nodes - Frees nodes in the stack.
  */
-void _freeN(void)
+void free_nodes(void)
 {
 	stack_t *tmp;
 
@@ -57,11 +57,11 @@ void _freeN(void)
 
 
 /**
- * _qadd - Adds a node to the queue.
+ * add_to_queue - Adds a node to the queue.
  * @new_node: Pointer to the new node.
  * @ln: line number of the opcode.
  */
-void _qadd(stack_t **new_node, __attribute__((unused))unsigned int ln)
+void add_to_queue(stack_t **new_node, __attribute__((unused))unsigned int ln)
 {
 	stack_t *tmp;
 
