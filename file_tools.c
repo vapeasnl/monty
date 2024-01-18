@@ -26,60 +26,60 @@ void _openf(char *file_name)
 
 void _readf(FILE *fd)
 {
-	int line_number, fmt = 0;
-	char *tmpb = NULL;
+	int line_number, format = 0;
+	char *buffer = NULL;
 	size_t len = 0;
 
-	for (line_number = 1; getline(&tmpb, &len, fd) != -1; line_number++)
+	for (line_number = 1; getline(&buffer, &len, fd) != -1; line_number++)
 	{
-		fmt = _parsel(tmpb, line_number, fmt);
+		format = _parsel(buffer, line_number, format);
 	}
-	free(tmpb);
+	free(buffer);
 }
 
 
 /**
  * _parsel - Separates each line into tokens to determine
  * which function to call
- * @tmpb: line from the file
+ * @buffer: line from the file
  * @line_number: line number
- * @fmt:  storage fmt. If 0 Nodes will be entered as a stack.
+ * @format:  storage format. If 0 Nodes will be entered as a stack.
  * if 1 nodes will be entered as a queue.
  * Return: Returns 0 if the opcode is stack. 1 if queue.
  */
 
-int _parsel(char *tmpb, int line_number, int fmt)
+int _parsel(char *buffer, int line_number, int format)
 {
-	char *opcode, *val;
+	char *opcode, *value;
 	const char *delim = "\n ";
 
-	if (tmpb == NULL)
+	if (buffer == NULL)
 		_er(4);
 
-	opcode = strtok(tmpb, delim);
+	opcode = strtok(buffer, delim);
 	if (opcode == NULL)
-		return (fmt);
-	val = strtok(NULL, delim);
+		return (format);
+	value = strtok(NULL, delim);
 
 	if (strcmp(opcode, "stack") == 0)
 		return (0);
 	if (strcmp(opcode, "queue") == 0)
 		return (1);
 
-	_sfunc(opcode, val, line_number, fmt);
-	return (fmt);
+	_sfunc(opcode, value, line_number, format);
+	return (format);
 }
 
 /**
  * _sfunc - find the appropriate function for the opcode
  * @opcode: opcode
- * @val: argument of opcode
- * @fmt:  storage fmt. If 0 Nodes will be entered as a stack.
+ * @value: argument of opcode
+ * @format:  storage format. If 0 Nodes will be entered as a stack.
  * @ln: line number
  * if 1 nodes will be entered as a queue.
  * Return: void
  */
-void _sfunc(char *opcode, char *val, int ln, int fmt)
+void _sfunc(char *opcode, char *value, int ln, int format)
 {
 	int i;
 	int flag;
@@ -89,7 +89,7 @@ void _sfunc(char *opcode, char *val, int ln, int fmt)
 		{"pall", _stkprint},
 		{"pint", _tprint},
 		{"pop", _tpop},
-		{"nop", nop},
+		{"_time", nop},
 		{"swap", _nsawp},
 		{"add", _nadd},
 		{"sub", _nsub},
@@ -110,7 +110,7 @@ void _sfunc(char *opcode, char *val, int ln, int fmt)
 	{
 		if (strcmp(opcode, func_list[i].opcode) == 0)
 		{
-			_xfun(func_list[i].f, opcode, val, ln, fmt);
+			_xfun(func_list[i].f, opcode, value, ln, format);
 			flag = 0;
 		}
 	}
@@ -123,12 +123,12 @@ void _sfunc(char *opcode, char *val, int ln, int fmt)
  * _xfun - Calls the required function.
  * @func: Pointer to the function that is about to be called.
  * @op: string representing the opcode.
- * @val: string representing a numeric val.
+ * @val: string representing a numeric value.
  * @ln: line numeber for the instruction.
- * @fmt: Format specifier. If 0 Nodes will be entered as a stack.
+ * @format: Format specifier. If 0 Nodes will be entered as a stack.
  * if 1 nodes will be entered as a queue.
  */
-void _xfun(op_func func, char *op, char *val, int ln, int fmt)
+void _xfun(op_func func, char *op, char *val, int ln, int format)
 {
 	stack_t *node;
 	int flag;
@@ -150,9 +150,9 @@ void _xfun(op_func func, char *op, char *val, int ln, int fmt)
 				_er(5, ln);
 		}
 		node = _makeN(atoi(val) * flag);
-		if (fmt == 0)
+		if (format == 0)
 			func(&node, ln);
-		if (fmt == 1)
+		if (format == 1)
 			_qadd(&node, ln);
 	}
 	else

@@ -26,6 +26,7 @@ typedef struct instruction_s
 extern stack_t *head;
 typedef void (*op_func)(stack_t **, unsigned int);
 
+
 /* File operations */
 void _openf(char *file_name);
 int _parsel(char *tmpb, int line_number, int fmt);
