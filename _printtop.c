@@ -1,14 +1,14 @@
 #include "monty.h"
 
 /**
- * print_top - Prints the top node of the stack.
+ * _printtop - Prints the top node of the stack.
  * @stack: Pointer to a pointer pointing to top node of the stack.
  * @line_number: Interger representing the line number of of the opcode.
  */
-void print_top(stack_t **stack, unsigned int line_number)
+void _printtop(stack_t **stack, unsigned int line_number)
 {
 	if (stack == NULL || *stack == NULL)
-		more_err(6, line_number);
+		_erA(6, line_number);
 	printf("%d\n", (*stack)->n);
 }
 

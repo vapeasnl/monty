@@ -1,14 +1,14 @@
 #include "monty.h"
 
 /**
- * more_err - handles errors.
+ * _erA - handles errors.
  * @error_code: The error codes are the following:
  * (6) => When the stack it empty for pint.
  * (7) => When the stack it empty for pop.
  * (8) => When stack is too short for operation.
  * (9) => Division by zero.
  */
-void more_err(int error_code, ...)
+void _erA(int error_code, ...)
 {
 	va_list ag;
 	char *op;

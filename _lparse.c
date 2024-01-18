@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * parse_line - Separates each line into tokens to determine
+ * _lparse - Separates each line into tokens to determine
  * which function to call
  * @buffer: line from the file
  * @line_number: line number
@@ -10,13 +10,13 @@
  * Return: Returns 0 if the opcode is stack. 1 if queue.
  */
 
-int parse_line(char *buffer, int line_number, int format)
+int _lparse(char *buffer, int line_number, int format)
 {
 	char *opcode, *value;
 	const char *delim = "\n ";
 
 	if (buffer == NULL)
-		err(4);
+		_er(4);
 
 	opcode = strtok(buffer, delim);
 	if (opcode == NULL)
@@ -28,6 +28,6 @@ int parse_line(char *buffer, int line_number, int format)
 	if (strcmp(opcode, "queue") == 0)
 		return (1);
 
-	find_func(opcode, value, line_number, format);
+	_sfunc(opcode, value, line_number, format);
 	return (format);
 }
