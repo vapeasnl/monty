@@ -1,4 +1,4 @@
-#include "monty.h"
+#include "main.h"
 
 /**
  * rotl - Rotates the first node of the stack to the bottom.

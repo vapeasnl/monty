@@ -1,4 +1,4 @@
-#include "monty.h"
+#include "main.h"
 
 /**
  * rotr - Rotates the last node of the stack to the top.

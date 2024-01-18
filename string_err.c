@@ -1,4 +1,4 @@
-#include "monty.h"
+#include "main.h"
 /**
  * string_err - handles errors.
  * @error_code: The error codes are the following:

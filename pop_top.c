@@ -1,4 +1,4 @@
-#include "monty.h"
+#include "main.h"
 
 /**
  * pop_top - Adds a node to the stack.

@@ -1,4 +1,4 @@
-#include "monty.h"
+#include "main.h"
 
 /**
  * more_err - handles errors.

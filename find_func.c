@@ -1,4 +1,4 @@
-#include "monty.h"
+#include "main.h"
 /**
  * find_func - find the appropriate function for the opcode
  * @opcode: opcode
