@@ -1,4 +1,4 @@
-#include "main.h"
+#include "monty.h"
 
 /**
  * print_str - Prints a string.

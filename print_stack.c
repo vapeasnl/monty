@@ -1,4 +1,4 @@
-#include "main.h"
+#include "monty.h"
 
 /**
  * print_stack - Adds a node to the stack.

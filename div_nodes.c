@@ -1,4 +1,4 @@
-#include "main.h"
+#include "monty.h"
 
 /**
  * div_nodes - Adds the top two elements of the stack.

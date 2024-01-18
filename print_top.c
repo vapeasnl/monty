@@ -1,4 +1,4 @@
-#include "main.h"
+#include "monty.h"
 
 /**
  * print_top - Prints the top node of the stack.

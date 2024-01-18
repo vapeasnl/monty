@@ -1,4 +1,4 @@
-#include "main.h"
+#include "monty.h"
 
 /**
  * call_fun - Calls the required function.
