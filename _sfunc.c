@@ -27,8 +27,8 @@ void _sfunc(char *opcode, char *value, int ln, int format)
 		{"mod", _nmod},
 		{"pchar", _printchar},
 		{"pstr", _printstr},
-		{"_rotl", _rotl},
-		{"_rotr", _rotr},
+		{"rotl", _rotl},
+		{"rotr", _rotr},
 		{NULL, NULL}
 	};
 
