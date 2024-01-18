@@ -12,14 +12,23 @@
 
 #include <ctype.h>
 
-
+/**
+ * struct stack_s --
+ * @n: --
+ * @prev: --
+ * @next: --
+ */
 typedef struct stack_s
 {
 	int n;
 	struct stack_s *prev;
 	struct stack_s *next;
 } stack_t;
-
+/**
+ * struct instruction_s --
+ * @opcode: --
+ * @f: --
+ */
 typedef struct instruction_s
 {
 	char *opcode;
@@ -27,6 +36,7 @@ typedef struct instruction_s
 } instruction_t;
 
 extern stack_t *head;
+stack_t *head = NULL;
 typedef void (*op_func)(stack_t **, unsigned int);
 void _fopen(char *file_name);
 int _lparse(char *buffer, int line_number, int format);
@@ -41,7 +51,7 @@ void add_to_queue(stack_t **, unsigned int);
 void _exefunc(op_func, char *, char *, int, int);
 void _printtop(stack_t **, unsigned int);
 void _tpop(stack_t **, unsigned int);
-void nop(stack_t **, unsigned int);
+void _nop(stack_t **, unsigned int);
 void _nswap(stack_t **, unsigned int);
 void _nadd(stack_t **, unsigned int);
 void _nsub(stack_t **, unsigned int);
