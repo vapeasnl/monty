@@ -41,7 +41,7 @@ void add_to_queue(stack_t **, unsigned int);
 void _exefunc(op_func, char *, char *, int, int);
 void _printtop(stack_t **, unsigned int);
 void _tpop(stack_t **, unsigned int);
-void _nop(stack_t **, unsigned int);
+void nop(stack_t **, unsigned int);
 void _nswap(stack_t **, unsigned int);
 void _nadd(stack_t **, unsigned int);
 void _nsub(stack_t **, unsigned int);

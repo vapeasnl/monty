@@ -18,7 +18,7 @@ void _sfunc(char *opcode, char *value, int ln, int format)
 		{"pall", _printstk},
 		{"pint", _printtop},
 		{"pop", _tpop},
-		{"_nop", _nop},
+		{"nop", nop},
 		{"swap", _nswap},
 		{"add", _nadd},
 		{"sub", _nsub},
