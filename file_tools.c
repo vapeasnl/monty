@@ -1,4 +1,4 @@
-#include "main.h"
+#include "monty.h"
 
 /**
  * open_file - opens a file
