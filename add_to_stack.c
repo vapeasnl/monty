@@ -2,11 +2,11 @@
 
 
 /**
- * _stkadd - Adds a node to the stack.
+ * add_to_stack - Adds a node to the stack.
  * @new_node: Pointer to the new node.
  * @ln: Interger representing the line number of of the opcode.
  */
-void _stkadd(stack_t **new_node, __attribute__((unused))unsigned int ln)
+void add_to_stack(stack_t **new_node, __attribute__((unused))unsigned int ln)
 {
 	stack_t *tmp;
 
