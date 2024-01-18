@@ -1,5 +1,5 @@
-#ifndef MAIN_H
-#define MAIN_H
+#ifndef MONTY_H
+#define MONTY_H
 
 #define _GNU_SOURCE
 #include <stdio.h>
@@ -34,34 +34,34 @@ void find_func(char *, char *, int, int);
 
 /* Stack operations */
 stack_t *create_node(int n);
-void _nfree(void);
-void _stkprint(stack_t **, unsigned int);
-void _stkadd(stack_t **, unsigned int);
-void _qadd(stack_t **, unsigned int);
+void free_nodes(void);
+void print_stack(stack_t **, unsigned int);
+void add_to_stack(stack_t **, unsigned int);
+void add_to_queue(stack_t **, unsigned int);
 
 void call_fun(op_func, char *, char *, int, int);
 
-void _tprint(stack_t **, unsigned int);
-void _tpop(stack_t **, unsigned int);
+void print_top(stack_t **, unsigned int);
+void pop_top(stack_t **, unsigned int);
 void nop(stack_t **, unsigned int);
-void _nswap(stack_t **, unsigned int);
+void swap_nodes(stack_t **, unsigned int);
 
 /* Math operations with nodes */
-void _nadd(stack_t **, unsigned int);
-void _nsub(stack_t **, unsigned int);
-void _ndiv(stack_t **, unsigned int);
-void _nmul(stack_t **, unsigned int);
-void _nmod(stack_t **, unsigned int);
+void add_nodes(stack_t **, unsigned int);
+void sub_nodes(stack_t **, unsigned int);
+void div_nodes(stack_t **, unsigned int);
+void mul_nodes(stack_t **, unsigned int);
+void mod_nodes(stack_t **, unsigned int);
 
 /* String operations */
-void _charprint(stack_t **, unsigned int);
-void _strprint(stack_t **, unsigned int);
+void print_char(stack_t **, unsigned int);
+void print_str(stack_t **, unsigned int);
 void rotl(stack_t **, unsigned int);
 
 /* Error handling */
-void _er(int error_code, ...);
-void _erA(int error_code, ...);
-void _erS(int error_code, ...);
+void err(int error_code, ...);
+void more_err(int error_code, ...);
+void string_err(int error_code, ...);
 void rotr(stack_t **, unsigned int);
 
 #endif

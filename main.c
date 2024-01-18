@@ -1,4 +1,4 @@
-#include "main.h"
+#include "monty.h"
 stack_t *head = NULL;
 /**
  * main - entry point
@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
 		exit(EXIT_FAILURE);
 	}
 	ofile(argv[1]);
-	_nfree();
+	free_nodes();
 	return (0);
 }
 
@@ -30,7 +30,7 @@ stack_t *create_node(int n)
 
 	node = malloc(sizeof(stack_t));
 	if (node == NULL)
-		_er(4);
+		err(4);
 	node->next = NULL;
 	node->prev = NULL;
 	node->n = n;
@@ -38,9 +38,9 @@ stack_t *create_node(int n)
 }
 
 /**
- * _nfree - Frees nodes in the stack.
+ * free_nodes - Frees nodes in the stack.
  */
-void _nfree(void)
+void free_nodes(void)
 {
 	stack_t *tmp;
 
@@ -57,11 +57,11 @@ void _nfree(void)
 
 
 /**
- * _qadd - Adds a node to the queue.
+ * add_to_queue - Adds a node to the queue.
  * @new_node: Pointer to the new node.
  * @ln: line number of the opcode.
  */
-void _qadd(stack_t **new_node, __attribute__((unused))unsigned int ln)
+void add_to_queue(stack_t **new_node, __attribute__((unused))unsigned int ln)
 {
 	stack_t *tmp;
 

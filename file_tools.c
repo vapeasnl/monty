@@ -1,4 +1,4 @@
-#include "main.h"
+#include "monty.h"
 
 /**
  * ofile - opens a file
@@ -11,7 +11,7 @@ void ofile(char *file_name)
 	FILE *fd = fopen(file_name, "r");
 
 	if (file_name == NULL || fd == NULL)
-		_er(2, file_name);
+		err(2, file_name);
 
 	read_file(fd);
 	fclose(fd);
@@ -54,7 +54,7 @@ int parse_line(char *buffer, int line_number, int format)
 	const char *delim = "\n ";
 
 	if (buffer == NULL)
-		_er(4);
+		err(4);
 
 	opcode = strtok(buffer, delim);
 	if (opcode == NULL)
@@ -85,19 +85,19 @@ void find_func(char *opcode, char *value, int ln, int format)
 	int flag;
 
 	instruction_t func_list[] = {
-		{"push", _stkadd},
-		{"pall", _stkprint},
-		{"pint", _tprint},
-		{"pop", _tpop},
+		{"push", add_to_stack},
+		{"pall", print_stack},
+		{"pint", print_top},
+		{"pop", pop_top},
 		{"nop", nop},
-		{"swap", _nswap},
-		{"add", _nadd},
-		{"sub", _nsub},
-		{"div", _ndiv},
-		{"mul", _nmul},
-		{"mod", _nmod},
-		{"pchar", _charprint},
-		{"pstr", _strprint},
+		{"swap", swap_nodes},
+		{"add", add_nodes},
+		{"sub", sub_nodes},
+		{"div", div_nodes},
+		{"mul", mul_nodes},
+		{"mod", mod_nodes},
+		{"pchar", print_char},
+		{"pstr", print_str},
 		{"rotl", rotl},
 		{"rotr", rotr},
 		{NULL, NULL}
@@ -115,7 +115,7 @@ void find_func(char *opcode, char *value, int ln, int format)
 		}
 	}
 	if (flag == 1)
-		_er(3, ln, opcode);
+		err(3, ln, opcode);
 }
 
 
@@ -143,17 +143,17 @@ void call_fun(op_func func, char *op, char *val, int ln, int format)
 			flag = -1;
 		}
 		if (val == NULL)
-			_er(5, ln);
+			err(5, ln);
 		for (i = 0; val[i] != '\0'; i++)
 		{
 			if (isdigit(val[i]) == 0)
-				_er(5, ln);
+				err(5, ln);
 		}
 		node = create_node(atoi(val) * flag);
 		if (format == 0)
 			func(&node, ln);
 		if (format == 1)
-			_qadd(&node, ln);
+			add_to_queue(&node, ln);
 	}
 	else
 		func(&head, ln);
