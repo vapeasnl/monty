@@ -1,18 +1,18 @@
 #include "monty.h"
 
 /**
- * more_err - handles errors.
+ * _erA - handles errors.
  * @error_code: The error codes are the following:
  * (6) => When the stack it empty for pint.
  * (7) => When the stack it empty for pop.
  * (8) => When stack is too short for operation.
  * (9) => Division by zero.
  */
-void more_err(int error_code, ...)
+void _erA(int error_code, ...)
 {
 	va_list ag;
 	char *op;
-	int l_num;
+	int ln;
 
 	va_start(ag, error_code);
 	switch (error_code)
@@ -26,9 +26,9 @@ void more_err(int error_code, ...)
 				va_arg(ag, int));
 			break;
 		case 8:
-			l_num = va_arg(ag, unsigned int);
+			ln = va_arg(ag, unsigned int);
 			op = va_arg(ag, char *);
-			fprintf(stderr, "L%d: can't %s, stack too short\n", l_num, op);
+			fprintf(stderr, "L%d: can't %s, stack too short\n", ln, op);
 			break;
 		case 9:
 			fprintf(stderr, "L%d: division by zero\n",

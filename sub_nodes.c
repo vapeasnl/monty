@@ -11,7 +11,7 @@ void sub_nodes(stack_t **stack, unsigned int line_number)
 
 	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
 
-		more_err(8, line_number, "sub");
+		_erA(8, line_number, "sub");
 
 
 	(*stack) = (*stack)->next;

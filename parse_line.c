@@ -16,7 +16,7 @@ int parse_line(char *buffer, int line_number, int format)
 	const char *delim = "\n ";
 
 	if (buffer == NULL)
-		err(4);
+		_er(4);
 
 	opcode = strtok(buffer, delim);
 	if (opcode == NULL)
@@ -28,6 +28,6 @@ int parse_line(char *buffer, int line_number, int format)
 	if (strcmp(opcode, "queue") == 0)
 		return (1);
 
-	find_func(opcode, value, line_number, format);
+	_sfunc(opcode, value, line_number, format);
 	return (format);
 }

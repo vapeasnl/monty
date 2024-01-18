@@ -1,6 +1,6 @@
 #include "monty.h"
 /**
- * find_func - find the appropriate function for the opcode
+ * _sfunc - find the appropriate function for the opcode
  * @opcode: opcode
  * @value: argument of opcode
  * @format:  storage format. If 0 Nodes will be entered as a stack.
@@ -8,23 +8,23 @@
  * if 1 nodes will be entered as a queue.
  * Return: void
  */
-void find_func(char *opcode, char *value, int ln, int format)
+void _sfunc(char *opcode, char *value, int ln, int format)
 {
 	int i;
 	int flag;
 
 	instruction_t func_list[] = {
-		{"push", add_to_stack},
+		{"push", _stkadd},
 		{"pall", print_stack},
 		{"pint", print_top},
 		{"pop", pop_top},
 		{"nop", nop},
 		{"swap", swap_nodes},
-		{"add", add_nodes},
+		{"add", _nadd},
 		{"sub", sub_nodes},
-		{"div", div_nodes},
-		{"mul", mul_nodes},
-		{"mod", mod_nodes},
+		{"div", _ndiv},
+		{"mul", _nmul},
+		{"mod", _nmod},
 		{"pchar", print_char},
 		{"pstr", print_str},
 		{"rotl", rotl},
@@ -39,10 +39,10 @@ void find_func(char *opcode, char *value, int ln, int format)
 	{
 		if (strcmp(opcode, func_list[i].opcode) == 0)
 		{
-			call_fun(func_list[i].f, opcode, value, ln, format);
+			_exefun(func_list[i].f, opcode, value, ln, format);
 			flag = 0;
 		}
 	}
 	if (flag == 1)
-		err(3, ln, opcode);
+		_er(3, ln, opcode);
 }
