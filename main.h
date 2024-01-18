@@ -44,7 +44,7 @@ void _xfun(op_func, char *, char *, int, int);
 
 void _tprint(stack_t **, unsigned int);
 void _tpop(stack_t **, unsigned int);
-void _time(stack_t **, unsigned int);
+void nop(stack_t **, unsigned int);
 void _nsawp(stack_t **, unsigned int);
 
 /* Math operations with nodes */

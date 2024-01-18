@@ -1,11 +1,11 @@
 #include "main.h"
 
 /**
- * _time - Does nothing.
+ * nop - Does nothing.
  * @stk: Pointer to a pointer pointing to top node of the stk.
  * @line_number: Interger representing the line number of of the opcode.
  */
-void _time(stack_t **stk, unsigned int line_number)
+void nop(stack_t **stk, unsigned int line_number)
 {
 	(void)stk;
 	(void)line_number;
