@@ -1,30 +1,30 @@
-#include "monty.h"
+#include "main.h"
 
 /**
- * open_file - opens a file
+ * _openf - opens a file
  * @file_name: the file namepath
  * Return: void
  */
 
-void open_file(char *file_name)
+void _openf(char *file_name)
 {
 	FILE *fd = fopen(file_name, "r");
 
 	if (file_name == NULL || fd == NULL)
 		err(2, file_name);
 
-	read_file(fd);
+	_readf(fd);
 	fclose(fd);
 }
 
 
 /**
- * read_file - reads a file
+ * _readf - reads a file
  * @fd: pointer to file descriptor
  * Return: void
  */
 
-void read_file(FILE *fd)
+void _readf(FILE *fd)
 {
 	int line_number, format = 0;
 	char *buffer = NULL;
@@ -32,14 +32,14 @@ void read_file(FILE *fd)
 
 	for (line_number = 1; getline(&buffer, &len, fd) != -1; line_number++)
 	{
-		format = parse_line(buffer, line_number, format);
+		format = _pline(buffer, line_number, format);
 	}
 	free(buffer);
 }
 
 
 /**
- * parse_line - Separates each line into tokens to determine
+ * _pline - Separates each line into tokens to determine
  * which function to call
  * @buffer: line from the file
  * @line_number: line number
@@ -48,7 +48,7 @@ void read_file(FILE *fd)
  * Return: Returns 0 if the opcode is stack. 1 if queue.
  */
 
-int parse_line(char *buffer, int line_number, int format)
+int _pline(char *buffer, int line_number, int format)
 {
 	char *opcode, *value;
 	const char *delim = "\n ";
@@ -66,12 +66,12 @@ int parse_line(char *buffer, int line_number, int format)
 	if (strcmp(opcode, "queue") == 0)
 		return (1);
 
-	find_func(opcode, value, line_number, format);
+	_sfun(opcode, value, line_number, format);
 	return (format);
 }
 
 /**
- * find_func - find the appropriate function for the opcode
+ * _sfun - find the appropriate function for the opcode
  * @opcode: opcode
  * @value: argument of opcode
  * @format:  storage format. If 0 Nodes will be entered as a stack.
@@ -79,7 +79,7 @@ int parse_line(char *buffer, int line_number, int format)
  * if 1 nodes will be entered as a queue.
  * Return: void
  */
-void find_func(char *opcode, char *value, int ln, int format)
+void _sfun(char *opcode, char *value, int ln, int format)
 {
 	int i;
 	int flag;
