@@ -29,6 +29,7 @@ typedef void (*op_func)(stack_t **, unsigned int);
 void _openf(char *file_name);
 int _pline(char *buffer, int line_number, int format);
 void _readf(FILE *);
+int len_chars(FILE *);
 void _sfun(char *, char *, int, int);
 
 /* Stack operations */
