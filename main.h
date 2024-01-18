@@ -27,7 +27,7 @@ extern stack_t *head;
 typedef void (*op_func)(stack_t **, unsigned int);
 
 /* File operations */
-void _openf(char *name);
+void _openf(char *file_name);
 int _parsel(char *buffer, int line_number, int format);
 void _readf(FILE *);
 int _charlenght(FILE *);

@@ -2,16 +2,16 @@
 
 /**
  * _openf - opens a file
- * @name: the file namepath
+ * @file_name: the file namepath
  * Return: void
  */
 
-void _openf(char *name)
+void _openf(char *file_name)
 {
-	FILE *fd = fopen(name, "r");
+	FILE *fd = fopen(file_name, "r");
 
-	if (name == NULL || fd == NULL)
-		_er(2, name);
+	if (file_name == NULL || fd == NULL)
+		_er(2, file_name);
 
 	_readf(fd);
 	fclose(fd);
