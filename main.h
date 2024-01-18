@@ -26,11 +26,11 @@ extern stack_t *head;
 typedef void (*op_func)(stack_t **, unsigned int);
 
 /* File operations */
-void _openf(char *file_name);
-int _pline(char *buffer, int line_number, int format);
-void _readf(FILE *);
+void open_file(char *file_name);
+int parse_line(char *buffer, int line_number, int format);
+void read_file(FILE *);
 int len_chars(FILE *);
-void _sfun(char *, char *, int, int);
+void find_func(char *, char *, int, int);
 
 /* Stack operations */
 stack_t *create_node(int n);
