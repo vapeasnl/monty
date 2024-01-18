@@ -2,12 +2,16 @@
 #define MONTY_H
 
 #define _GNU_SOURCE
-#include <stdio.h>
+
 #include <unistd.h>
+
+#include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-#include <ctype.h>
 #include <stdarg.h>
+
+#include <ctype.h>
+
 
 typedef struct stack_s
 {
@@ -24,45 +28,32 @@ typedef struct instruction_s
 
 extern stack_t *head;
 typedef void (*op_func)(stack_t **, unsigned int);
-
-/* File operations */
 void _fopen(char *file_name);
 int _lparse(char *buffer, int line_number, int format);
 void _fread(FILE *);
 int len_chars(FILE *);
 void _sfunc(char *, char *, int, int);
-
-/* Stack operations */
 stack_t *create_node(int n);
 void free_nodes(void);
 void _printstk(stack_t **, unsigned int);
 void _stkadd(stack_t **, unsigned int);
 void add_to_queue(stack_t **, unsigned int);
-
 void _exefunc(op_func, char *, char *, int, int);
-
 void _printtop(stack_t **, unsigned int);
 void _tpop(stack_t **, unsigned int);
 void _nop(stack_t **, unsigned int);
 void _nswap(stack_t **, unsigned int);
-
-/* Math operations with nodes */
 void _nadd(stack_t **, unsigned int);
 void _nsub(stack_t **, unsigned int);
 void _ndiv(stack_t **, unsigned int);
 void _nmul(stack_t **, unsigned int);
 void _nmod(stack_t **, unsigned int);
-
-/* String operations */
 void _printchar(stack_t **, unsigned int);
 void _printstr(stack_t **, unsigned int);
 void _rotl(stack_t **, unsigned int);
-
-/* Error handling */
 void _er(int error_code, ...);
 void _erA(int error_code, ...);
 void _erS(int error_code, ...);
 void _rotr(stack_t **, unsigned int);
-
 #endif
 

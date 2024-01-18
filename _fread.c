@@ -1,9 +1,8 @@
 #include "monty.h"
 
 /**
- * _fread - reads a file
- * @fd: pointer to file descriptor
- * Return: void
+ * _fread - read file
+ * @fd: point to file descriptor.
  */
 
 void _fread(FILE *fd)

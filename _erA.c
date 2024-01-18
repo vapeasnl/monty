@@ -2,11 +2,7 @@
 
 /**
  * _erA - handles errors.
- * @error_code: The error codes are the following:
- * (6) => When the stack it empty for pint.
- * (7) => When the stack it empty for pop.
- * (8) => When stack is too short for operation.
- * (9) => Division by zero.
+ * @error_code: The error codes.
  */
 void _erA(int error_code, ...)
 {

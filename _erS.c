@@ -1,9 +1,7 @@
 #include "monty.h"
 /**
  * _erS - handles errors.
- * @error_code: The error codes are the following:
- * (10) ~> The number inside a node is outside ASCII bounds.
- * (11) ~> The stack is empty.
+ * @error_code: The error codes.
  */
 void _erS(int error_code, ...)
 {

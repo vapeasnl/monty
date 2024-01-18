@@ -2,8 +2,8 @@
 
 /**
  * _printstk - Adds a node to the stack.
- * @stack: Pointer to a pointer pointing to top node of the stack.
- * @line_number: line number of  the opcode.
+ * @stack: Top node of the stack.
+ * @line_number: Opcode line number.
  */
 void _printstk(stack_t **stack, unsigned int line_number)
 {

@@ -3,9 +3,9 @@
  * _sfunc - find the appropriate function for the opcode
  * @opcode: opcode
  * @value: argument of opcode
- * @format:  storage format. If 0 Nodes will be entered as a stack.
+ * @format:  storage format. If 0 > stack.
  * @ln: line number
- * if 1 nodes will be entered as a queue.
+ * if 1 >> queue.
  * Return: void
  */
 void _sfunc(char *opcode, char *value, int ln, int format)

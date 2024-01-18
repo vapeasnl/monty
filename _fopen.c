@@ -1,9 +1,8 @@
 #include "monty.h"
 
 /**
- * _fopen - opens a file
- * @file_name: the file namepath
- * Return: void
+ * _fopen - open a file
+ * @file_name: namepath
  */
 
 void _fopen(char *file_name)

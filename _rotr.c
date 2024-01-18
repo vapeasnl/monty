@@ -2,8 +2,8 @@
 
 /**
  * _rotr - Rotates the last node of the stack to the top.
- * @stack: Pointer to a pointer pointing to top node of the stack.
- * @ln: Interger representing the line number of of the opcode.
+ * @stack: Top node of the stack.
+ * @ln: Opcode line number.
  */
 void _rotr(stack_t **stack, __attribute__((unused))unsigned int ln)
 {

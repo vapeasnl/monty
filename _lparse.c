@@ -1,13 +1,12 @@
 #include "monty.h"
 
 /**
- * _lparse - Separates each line into tokens to determine
- * which function to call
+ * _lparse - Separates each line into tokens to call function.
  * @buffer: line from the file
  * @line_number: line number
- * @format:  storage format. If 0 Nodes will be entered as a stack.
- * if 1 nodes will be entered as a queue.
- * Return: Returns 0 if the opcode is stack. 1 if queue.
+ * @format:  storage format. If 0 Nodes >> stack.
+ * if 1 nodes >> queue.
+ * Return: Returns 0 = stack. 1 i= queue.
  */
 
 int _lparse(char *buffer, int line_number, int format)

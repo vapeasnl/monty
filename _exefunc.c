@@ -1,13 +1,13 @@
 #include "monty.h"
 
 /**
- * _exefunc - Calls the required function.
- * @func: Pointer to the function that is about to be called.
- * @op: string representing the opcode.
- * @val: string representing a numeric value.
- * @ln: line numeber for the instruction.
- * @format: Format specifier. If 0 Nodes will be entered as a stack.
- * if 1 nodes will be entered as a queue.
+ * _exefunc - Call the function.
+ * @func: Point func.
+ * @op: string of opcode.
+ * @val: num string.
+ * @ln: line num.
+ * @format: Format specifier. If 0 Nodes >> stack.
+ * if 1 nodes >> queue.
  */
 void _exefunc(op_func func, char *op, char *val, int ln, int format)
 {

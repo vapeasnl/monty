@@ -1,8 +1,8 @@
 #include "monty.h"
 /**
- * _nadd - Adds the top two elements of the stack.
- * @stack: Pointer to a pointer pointing to top node of the stack.
- * @line_number: Interger representing the line number of of the opcode.
+ * _nadd - Add the top two elements of the stack.
+ * @stack: Top node of the stack - P.
+ * @line_number: Opcode line number.
  */
 void _nadd(stack_t **stack, unsigned int line_number)
 {

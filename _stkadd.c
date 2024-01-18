@@ -4,7 +4,7 @@
 /**
  * _stkadd - Adds a node to the stack.
  * @new_node: Pointer to the new node.
- * @ln: Interger representing the line number of of the opcode.
+ * @ln: Opcode line number.
  */
 void _stkadd(stack_t **new_node, __attribute__((unused))unsigned int ln)
 {
